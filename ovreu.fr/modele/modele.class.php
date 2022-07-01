@@ -305,7 +305,7 @@
     /////////////////////////////////////////////////////////////Fonction pour entretien technique 2///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Fonction qui insert dans une table (reunions) plusieurs reunions pour l'entretien technique n°2. 
+    // Fonction qui insere dans une table (reunions) plusieurs reunions pour l'entretien technique n°2. 
     
     public function inser_tech2()
     {
@@ -327,7 +327,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //date de départ
@@ -341,7 +341,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //id du salarié
@@ -385,7 +385,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //date d'embauche
@@ -399,7 +399,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //id du salarié
@@ -446,7 +446,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //date d'embauche
@@ -460,8 +460,8 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
-      foreach ($recipes as $recipe) 
+      // On affiche chaque recette une à une (1)
+      foreach ($recipes as $recipe)  
       {
         //id du salarié
        $iddusalarie = $recipe['idsalarie'];
@@ -505,7 +505,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //date d'embauche
@@ -519,7 +519,7 @@
       $recipesStatement->execute();
       $recipes = $recipesStatement->fetchAll();
 
-      // On affiche chaque recette une à une
+      // On affiche chaque recette une à une (1)
       foreach ($recipes as $recipe) 
       {
         //id du salarié
@@ -544,7 +544,7 @@
     /////////////////////////////////////////////////////////////Fonction pour entretien technique 2BIS///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique n°2 si le salarié est modifié. Pour tenir les dates correctes si modif. 
+    // Fonction qui insere dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique n°2 si le salarié est modifié. Pour tenir les dates correctes si modif. 
     
     public function inser_tech2bis($tab)
     {
@@ -586,7 +586,7 @@
     //////////////////////////////////////////////////////////////Fonction pour entretien technique 1BIS//////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique n°1 si le salarié est modifié. Pour tenir les dates correctes si modif. 
+    // Fonction qui insere dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique n°1 si le salarié est modifié. Pour tenir les dates correctes si modif. 
 
     public function inser_tech1bis($tab)
     {
@@ -629,7 +629,7 @@
     //////////////////////////////////////////////////////////////Fonction pour entretien avec Michel BIS//////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique avec Michel si le salarié est modifié. Pour tenir les dates correctes si modif. 
+    // Fonction qui insere dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique avec Michel si le salarié est modifié. Pour tenir les dates correctes si modif. 
 
     public function inser_reu_michelbis($tab)
     {
@@ -670,7 +670,7 @@
     //////////////////////////////////////////////////////////////Fonction pour entretien avec Guillaume BIS///////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique avec Guillaume si le salarié est modifié. Pour tenir les dates correctes si modif. 
+    // Fonction qui insere dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique avec Guillaume si le salarié est modifié. Pour tenir les dates correctes si modif. 
 
     public function inser_reu_guillaumebis($tab)
     {

@@ -1,0 +1,143 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique n°1 si le salarié est modifié. Pour tenir les dates correctes si modif. 
+
+    public function inser_tech1bis($tab)
+    {
+      try
+      {
+      	// On se connecte à MySQL
+      	$mysqlClient = new PDO('mysql:host=localhost:3307;dbname=ReunionOV;charset=utf8', 'root', '');
+      }
+      catch(Exception $e)
+      {
+      	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+      }
+      // Si tout va bien, on peut continuer
+
+      // On récupère la date d'embauche du salarié qui vient d'être modifié
+      $dateembauchephp=$tab['dateembauche'];
+
+      //Récupérer l'id salarie :
+      $iddusalarie=$tab['idsalarie'];
+
+      $dateFin = date("Y-m-d",strtotime($dateembauchephp.'+ 6 month')); //Même procédure que dans la fonction insert_tech1 :
+      $req=$mysqlClient->prepare("insert into Reunion (datereunion,libelle,idsalarie) values ('{$dateFin}','Entretien technique numero 1 ','{$iddusalarie}');");
+      $req->execute();
+      for ($i = 1; $i <= 20; $i++) {
+        $datet1 = date("Y-m-d",strtotime($dateFin.'+'.$i.' year'));
+
+
+        //Essaie d'inserer dans la BDD des dates futur qui seront à checker et à rapeller par mail
+        
+        $req=$mysqlClient->prepare("insert into Reunion (datereunion,libelle,idsalarie) values ('{$datet1}','Entretien technique numero 1 ','{$iddusalarie}');");
+        $req->execute();
+
+
+      }
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////Fonction pour entretien avec Michel BIS//////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique avec Michel si le salarié est modifié. Pour tenir les dates correctes si modif. 
+
+    public function inser_reu_michelbis($tab)
+    {
+      try
+      {
+      	// On se connecte à MySQL
+      	$mysqlClient = new PDO('mysql:host=localhost:3307;dbname=ReunionOV;charset=utf8', 'root', '');
+      }
+      catch(Exception $e)
+      {
+      	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+      }
+      // Si tout va bien, on peut continuer
+
+      // On récupère la date d'embauche du salarié qui vient d'être modifé
+      $dateembauchephp=$tab['dateembauche'];
+
+      //Récupérer l'id salarie :
+      $iddusalarie=$tab['idsalarie'];
+
+      $dateFin = date("Y-m-d",strtotime($dateembauchephp.'+ 1 month')); //Même procédure que dans la fonction inser_reu_michel :
+      for ($i = 1; $i <= 20; $i++) {
+        $datet1 = date("Y-m-d",strtotime($dateFin.'+'.$i.' year'));
+
+
+        //Essaie d'inserer dans la BDD des dates futur qui seront à checker et à rapeller par mail
+        
+        $req=$mysqlClient->prepare("insert into Reunion (datereunion,libelle,idsalarie) values ('{$datet1}','Entretien avec Michel ','{$iddusalarie}');");
+        $req->execute();
+
+
+      }
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////Fonction pour entretien avec Guillaume BIS///////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Fonction qui insert dans une table de bdd (reunions) plusieurs reunions pour l'entretien technique avec Guillaume si le salarié est modifié. Pour tenir les dates correctes si modif. 
+
+    public function inser_reu_guillaumebis($tab)
+    {
+      try
+      {
+      	// On se connecte à MySQL
+      	$mysqlClient = new PDO('mysql:host=localhost:3307;dbname=ReunionOV;charset=utf8', 'root', '');
+      }
+      catch(Exception $e)
+      {
+      	// En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+      }
+      // Si tout va bien, on peut continuer
+
+      // On récupère la date d'embauche du salarié qui vient d'être modifié
+      $dateembauchephp=$tab['dateembauche'];
+
+      //Récupérer l'id salarie :
+      $iddusalarie=$tab['idsalarie'];
+
+      $dateFin = date("Y-m-d",strtotime($dateembauchephp.'+ 2 month')); //Même procédure que dans la fonction  inser_reu_guillaume :
+      for ($i = 1; $i <= 20; $i++) {
+        $datet1 = date("Y-m-d",strtotime($dateFin.'+'.$i.' year'));
+
+
+        //Essaie d'inserer dans la BDD des dates futur qui seront à checker et à rapeller par mail
+        
+        $req=$mysqlClient->prepare("insert into Reunion (datereunion,libelle,idsalarie) values ('{$datet1}','Entretien avec Guillaume ','{$iddusalarie}');");
+        $req->execute();
+
+
+      }
+    }
+
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////Fonction pour la suppression d'un salarié///////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public function deleteClient ($idclient)
+	{
+		$requete = "delete from Salarie where idsalarie =".$idclient;
+		$con = mysqli_connect("localhost", "ov_user", "Openvalue75!", "ovreuniontest");
+		mysqli_query($con, $requete);
+		mysqli_close($con);
+	}
+
+
+  }
+
+  
+?>

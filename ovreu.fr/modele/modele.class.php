@@ -8,7 +8,7 @@
     {
       try{
         //gestion des exceptions: code qui pourra poser des problemes de connexion
-        $this->unPdo= new PDO("mysql:host=localhost;dbname=ReunionOV","ov_rh_managment","Openvalue75!");
+        $this->unPdo= new PDO("mysql:host=localhost;dbname=","","");
       }
       catch(PDOException $exp)
       {

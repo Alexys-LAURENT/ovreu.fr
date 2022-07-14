@@ -10,8 +10,8 @@ BACKUP_DIR="/var/www/ovreu.fr/backup/mysql"
 
 # Identifiants MySQL
 
-MYSQL_USER="alexys"
-MYSQL_PASSWORD="Openvalue75!"
+MYSQL_USER=""
+MYSQL_PASSWORD=""
 
 # Commandes MySQL (aucune raison de modifier ceci)
 
